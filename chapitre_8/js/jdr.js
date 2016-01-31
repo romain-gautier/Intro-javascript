@@ -3,6 +3,10 @@ var Personnage = {
     this.nom = nom;
     this.sante = sante;
     this.force = force;
+    this.inventaire = {
+      or: 10,
+      cle: 1,
+    };
   },
   attaquer: function (cible) {
           if (this.sante > 0) {
@@ -29,7 +33,8 @@ Joueur.initJoueur = function(nom, sante, force) {
 
 Joueur.decrire = function() {
   var description = this.nom + " a " + this.sante + " points de vie, " +
-    this.force + " en force et " + this.xp + " points d'expérience";
+    this.force + " en force, " + this.xp + " points d'expérience " + this.inventaire.or +
+    " pièces d'or et " + this.inventaire.cle + " clé(s).";
   return description;
 };
 
