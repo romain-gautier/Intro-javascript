@@ -4,7 +4,22 @@ var Personnage = {
     this.sante = sante;
     this.force = force;
   },
-};
+  attaquer: function (cible) {
+          if (this.sante > 0) {
+              var degats = this.force;
+              console.log(this.nom + " attaque " + cible.nom + " et lui fait " + degats + " points de dégâts");
+              cible.sante = cible.sante - degats;
+              if (cible.sante > 0) {
+                  console.log(cible.nom + " a encore " + cible.sante + " points de vie");
+              } else {
+                  cible.sante = 0;
+                  console.log(cible.nom + " est mort !");
+              }
+          } else {
+              console.log(this.nom + " ne peut pas attaquer : il est mort...");
+          }
+      }
+  };
 
 var Joueur = Object.create(Personnage);
 Joueur.initJoueur = function(nom, sante, force) {
@@ -16,6 +31,15 @@ Joueur.decrire = function() {
   var description = this.nom + " a " + this.sante + " points de vie, " +
     this.force + " en force et " + this.xp + " points d'expérience";
   return description;
+};
+
+Joueur.combattre = function (adversaire) {
+    this.attaquer(adversaire);
+    if (adversaire.sante === 0) {
+        console.log(this.nom + " a tué " + adversaire.nom + " et gagne " +
+            adversaire.valeur + " points d'expérience");
+        this.xp += adversaire.valeur;
+    }
 };
 
 var Adversaire = Object.create(Personnage);
@@ -39,6 +63,15 @@ var monstre = Object.create(Adversaire);
 monstre.initAdversaire("ZogZog", 40, 20, "orc", 10);
 
 console.log("Un affreux monstre arrive! C'est un " + monstre.race + " nommé " + monstre.nom + ".");
+
+monstre.attaquer(joueur1);
+monstre.attaquer(joueur2);
+
+joueur1.combattre(monstre);
+joueur2.combattre(monstre);
+
+console.log(joueur1.decrire());
+console.log(joueur2.decrire());
 
 
 
