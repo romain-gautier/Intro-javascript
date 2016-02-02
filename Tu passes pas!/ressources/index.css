@@ -1,0 +1,24 @@
+form{
+    background-color: #EEEEAA;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.formTitle{
+    font-weight: bold;
+}
+.form-group{
+    padding: 0 2%;
+}
+input{
+    border-radius: 10px;
+    border: solid 2px black;
+}
+input[type="button"]{
+    font-weight: bold;
+    background-color: skyblue;
+    margin: 0 2%;
+    width: 96%;
+    color: black;
+}

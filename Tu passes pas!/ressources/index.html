@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tu passes pas !</title>
+        <meta charset="utf-8" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    
+    <body>
+        <form name="form" method="post" action="index.html">
+            <div class="formTitle">Validateur de formulaire</div>
+            <div class="form-group">
+                <label>Votre nom</label><br />
+                <input type="text" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Votre email</label><br />
+                <input type="text" id="email" class="form-control" value="">
+            </div>
+            <div class="form-group">
+                <label>Votre date de naissance</label><br />
+                <input type="date" id="date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Votre age</label><br />
+                <input type="number" id="age" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Votre site Web</label><br />
+                <input type="text" id="url" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Votre téléphone</label><br />
+                <input type="tel" id="tel" class="form-control">
+            </div>
+            <br />
+            <div>
+                <input type="button" id="submit" class="form-control" value="Vérifier" onclick="checkForm();">
+            </div>
+            <br />
+        </form>
+        <script src="index.js"></script>
+    </body>
+</html>
