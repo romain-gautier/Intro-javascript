@@ -21,7 +21,7 @@ var listeContacts = [];
 listeContacts.push(contact1);
 listeContacts.push(contact2);
 
-while (choix != 9) {
+while (choix !== 9) {
 
   console.log("Bienvenue dans le gestionnaire de contacts");
   console.log("1: Lister les contacts");
@@ -30,18 +30,18 @@ while (choix != 9) {
 
   var choix = Number(prompt("Choisissez une action"));
 
-  while ((choix != 1) && (choix != 2) && (choix != 9)) {
+  while ((choix !== 1) && (choix !== 2) && (choix !== 9)) {
     var choix = Number(prompt("Choisissez une action"));
   }
 
-  if (choix == 1) {
+  if (choix === 1) {
     console.log("Voici la liste des contacts inscrits dans le gestionnaire :")
     listeContacts.forEach(function (listeContact) {
     console.log(listeContact.description());
     });
   }
 
-  else if (choix == 2) {
+  else if (choix === 2) {
     var nom1 = prompt("Veuillez saisir le nom du contact à saisir");
     var prenom1 = prompt("Veuillez saisir le nom du contact à saisir");
     var newContact = Object.create(Contact);
